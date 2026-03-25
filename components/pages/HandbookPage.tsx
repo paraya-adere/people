@@ -1,7 +1,5 @@
 "use client";
 
-import { basePath } from "@/lib/basePath";
-
 const cards = [
   {
     title: "Cómo trabajamos",
@@ -69,7 +67,7 @@ export default function HandbookPage() {
     <section
       className="relative py-10 sm:py-16 overflow-hidden"
       style={{
-        backgroundImage: `url(${basePath}/bg-nh.png)`,
+        backgroundImage: "url(/bg-nh.png)",
         backgroundSize: "200%",
         backgroundPosition: "center 30%",
         backgroundRepeat: "no-repeat",
