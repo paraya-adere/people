@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   Adereso Design System – Global Tokens
+   ========================================================= */
+:root {
+  /* Spacing (4px grid) */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+  --space-11: 80px;
+  --space-12: 96px;
+
+  /* Radius */
+  --radius-0: 0px;
+  --radius-1: 6px;
+  --radius-2: 10px;
+  --radius-3: 14px;
+  --radius-4: 18px;
+  --radius-5: 24px;
+  --radius-6: 999px;
+
+  /* Typography */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.5rem;
+  --font-3xl: 1.875rem;
+  --font-4xl: 2.25rem;
+  --font-5xl: 3rem;
+  --font-6xl: 3.75rem;
+
+  /* Borders */
+  --border-0: 0px;
+  --border-1: 1px;
+  --border-2: 2px;
+
+  /* Blur */
+  --blur-glass: 10px;
+
+  /* Shadows */
+  --shadow-0: none;
+  --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-2: 0 20px 60px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 20px rgba(255, 213, 64, 0.28);
+
+  /* Semantic surfaces */
+  --bg-1: #0c0c0d;
+  --bg-2: #131415;
+  --surface-1: rgba(255, 255, 255, 0.02);
+  --surface-2: rgba(255, 255, 255, 0.04);
+  --fg: rgba(255, 255, 255, 0.92);
+  --fg-muted: rgba(255, 255, 255, 0.68);
+  --fg-subtle: rgba(255, 255, 255, 0.5);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.1);
+
+  /* Focus ring */
+  --focus-ring: 0 0 0 1px rgba(255, 213, 64, 0.55), 0 0 0 5px rgba(255, 213, 64, 0.16);
+
+  /* Motion */
+  --dur-1: 150ms;
+  --dur-2: 220ms;
+  --dur-3: 320ms;
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0.9, 0.2, 1);
+
+  /* Layout */
+  --container-max: 72rem;
+  --gutter: 24px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-1);
+  color: var(--fg-muted);
+  font-family: "Work Sans", system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Outfit", system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0c0c0d; }
+::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+
+/* Glass panel utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* DS button transition */
+.ds-btn {
+  transition: transform var(--dur-1) var(--ease-standard),
+    opacity var(--dur-1) var(--ease-standard),
+    background var(--dur-2) var(--ease-standard),
+    box-shadow var(--dur-2) var(--ease-standard);
+}
+.ds-btn:active { transform: translateY(1px); }
+.ds-btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+/* DS Link */
+.ds-link {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 213, 64, 0.25);
+  transition: border-color var(--dur-2) var(--ease-standard),
+    opacity var(--dur-2) var(--ease-standard);
+}
+.ds-link:hover {
+  border-color: rgba(255, 213, 64, 0.6);
+  opacity: 0.95;
+}
+
+/* Page transition */
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-in { animation: pageIn 0.25s var(--ease-standard) forwards; }
+
+/* Timeline */
+.timeline-step {
+  border-left: 3px solid rgba(255, 213, 64, 0.4);
+  margin-left: 1.25rem;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+}
+.timeline-step:last-child { border-left-color: #FFD540; }
+.timeline-step::before {
+  content: attr(data-num);
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  transform: translateX(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #FFD540;
+  color: #1a1a1a;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5rem;
+}
