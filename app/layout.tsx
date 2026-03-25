@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "People & Careers | Únete al equipo",
   description:
     "Únete a Adereso. Construimos el futuro de la experiencia del cliente.",
+  icons: {
+    icon: "/Adereso-logo-favicon.png",
+  },
 };
 
 export default function RootLayout({

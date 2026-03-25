@@ -12,6 +12,7 @@ interface HeaderProps {
 }
 
 const navLinks: { label: string; page: Page }[] = [
+  { label: "Inicio", page: "home" },
   { label: "Nuestra cultura", page: "cultura" },
   { label: "Beneficios", page: "beneficios" },
   { label: "Handbook", page: "handbook" },
@@ -28,11 +29,13 @@ export default function Header({ currentPage, onNavigate, onUneteClick }: Header
   return (
     <header className="sticky top-0 z-50 bg-bg1/90 backdrop-blur-md border-b border-white/10">
       <div className="max-w-ds mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <button
-          onClick={() => handleNavigate("home")}
+        {/* Logo → adereso.ai */}
+        <a
+          href="https://adereso.ai"
+          target="_blank"
+          rel="noopener noreferrer"
           className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 rounded-r1"
-          aria-label="Adereso – Inicio"
+          aria-label="Adereso – Ir a adereso.ai"
         >
           <Image
             src="/assets/logo-adereso.png"
@@ -42,7 +45,7 @@ export default function Header({ currentPage, onNavigate, onUneteClick }: Header
             className="h-8 sm:h-10 w-auto object-contain"
             priority
           />
-        </button>
+        </a>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6" aria-label="Navegación principal">
