@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Carousel from "@/components/Carousel";
+import { basePath } from "@/lib/basePath";
 import ValorModal, { ValorData } from "@/components/modals/ValorModal";
 
 const valores = [
@@ -107,7 +108,7 @@ export default function CulturaPage() {
       <section
         className="relative py-12 sm:py-20 overflow-hidden"
         style={{
-          backgroundImage: `url(${process.env.NODE_ENV === "production" ? "/people" : ""}/bg-nh.png)`,
+          backgroundImage: `url(${basePath}/bg-nh.png)`,
           backgroundSize: "200%",
           backgroundPosition: "center 30%",
           backgroundRepeat: "no-repeat",

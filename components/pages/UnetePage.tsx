@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import VacantesModal from "@/components/modals/VacantesModal";
+import { basePath } from "@/lib/basePath";
 import ProcesoModal from "@/components/modals/ProcesoModal";
 
 interface UnetePageProps {
@@ -17,7 +18,7 @@ export default function UnetePage({ openVacantes = false }: UnetePageProps) {
       <section
         className="relative py-10 sm:py-16 overflow-hidden"
         style={{
-          backgroundImage: `url(${process.env.NODE_ENV === "production" ? "/people" : ""}/bg-nh.png)`,
+          backgroundImage: `url(${basePath}/bg-nh.png)`,
           backgroundSize: "200%",
           backgroundPosition: "center 30%",
           backgroundRepeat: "no-repeat",

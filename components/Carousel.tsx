@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
+import { basePath } from "@/lib/basePath";
 
 interface Slide {
   src: string;
@@ -10,12 +11,12 @@ interface Slide {
 }
 
 const slides: Slide[] = [
-  { src: "/assets/gallery-1.png", alt: "Paseo Team Chile 2026", caption: "Paseo Team Chile 2026" },
-  { src: "/assets/gallery-2.png", alt: "Paseo Team Colombia 2025", caption: "Paseo Team Colombia 2025" },
-  { src: "/assets/gallery-fiesta.png", alt: "Halloween Virtual 2025", caption: "Halloween Virtual 2025" },
-  { src: "/assets/gallery-halloween-ofi-2025.png", alt: "Halloween Ofi 2025", caption: "Halloween Ofi 2025" },
-  { src: "/assets/gallery-suelta-chisme.png", alt: "Sesión Suelta tu chisme", caption: "Sesión Suelta tu chisme" },
-  { src: "/assets/gallery-meet.png", alt: "Halloween Virtual 2021", caption: "Halloween Virtual 2021" },
+  { src: `${basePath}/assets/gallery-1.png`, alt: "Paseo Team Chile 2026", caption: "Paseo Team Chile 2026" },
+  { src: `${basePath}/assets/gallery-2.png`, alt: "Paseo Team Colombia 2025", caption: "Paseo Team Colombia 2025" },
+  { src: `${basePath}/assets/gallery-fiesta.png`, alt: "Halloween Virtual 2025", caption: "Halloween Virtual 2025" },
+  { src: `${basePath}/assets/gallery-halloween-ofi-2025.png`, alt: "Halloween Ofi 2025", caption: "Halloween Ofi 2025" },
+  { src: `${basePath}/assets/gallery-suelta-chisme.png`, alt: "Sesión Suelta tu chisme", caption: "Sesión Suelta tu chisme" },
+  { src: `${basePath}/assets/gallery-meet.png`, alt: "Halloween Virtual 2021", caption: "Halloween Virtual 2021" },
 ];
 
 export default function Carousel() {

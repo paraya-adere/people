@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import VacantesModal from "@/components/modals/VacantesModal";
+import { basePath } from "@/lib/basePath";
 
 type Page = "home" | "cultura" | "beneficios" | "handbook" | "unete";
 
@@ -73,7 +74,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
     <section
       className="relative min-h-[calc(100vh-64px)] flex items-center px-4 sm:px-6 py-10 sm:py-16 overflow-hidden"
       style={{
-        backgroundImage: `url(${process.env.NODE_ENV === "production" ? "/people" : ""}/bg-nh.png)`,
+        backgroundImage: `url(${basePath}/bg-nh.png)`,
         backgroundSize: "200%",
         backgroundPosition: "center 40%",
         backgroundRepeat: "no-repeat",

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { basePath } from "@/lib/basePath";
 
 type Page = "home" | "cultura" | "beneficios" | "handbook" | "unete";
 
@@ -35,7 +36,7 @@ export default function Header({ currentPage, onNavigate, onUneteClick }: Header
           aria-label="Adereso – Inicio"
         >
           <Image
-            src="/assets/logo-adereso.png"
+            src={`${basePath}/assets/logo-adereso.png`}
             alt="Adereso"
             width={120}
             height={40}
