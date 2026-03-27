@@ -1,15 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import VacantesModal from "@/components/modals/VacantesModal";
 import ProcesoModal from "@/components/modals/ProcesoModal";
 
-interface UnetePageProps {
-  openVacantes?: boolean;
-}
+const BUK_URL = "https://adereso.buk.cl/trabaja-con-nosotros#Procesos_de_Sel";
 
-export default function UnetePage({ openVacantes = false }: UnetePageProps) {
-  const [vacantesOpen, setVacantesOpen] = useState(openVacantes);
+export default function UnetePage() {
   const [procesoOpen, setProcesoOpen] = useState(false);
 
   return (
@@ -37,12 +33,14 @@ export default function UnetePage({ openVacantes = false }: UnetePageProps) {
               <p className="text-base text-zinc-400 leading-relaxed flex-1">
                 Revisa las posiciones disponibles y postula.
               </p>
-              <button
-                onClick={() => setVacantesOpen(true)}
+              <a
+                href={BUK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="self-start font-heading font-semibold text-sm px-5 py-2 rounded-r6 bg-brand text-neutral-900 hover:bg-brand-hover active:bg-brand-active transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/50"
               >
                 Ver vacantes
-              </button>
+              </a>
             </article>
 
             {/* Proceso */}
@@ -64,7 +62,6 @@ export default function UnetePage({ openVacantes = false }: UnetePageProps) {
         </div>
       </section>
 
-      <VacantesModal isOpen={vacantesOpen} onClose={() => setVacantesOpen(false)} />
       <ProcesoModal isOpen={procesoOpen} onClose={() => setProcesoOpen(false)} />
     </>
   );

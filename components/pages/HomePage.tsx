@@ -1,8 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import VacantesModal from "@/components/modals/VacantesModal";
-
 type Page = "home" | "cultura" | "beneficios" | "handbook" | "unete";
 
 interface HomePageProps {
@@ -65,11 +62,10 @@ const navCards: {
   },
 ];
 
-export default function HomePage({ onNavigate }: HomePageProps) {
-  const [vacantesOpen, setVacantesOpen] = useState(false);
+const BUK_URL = "https://adereso.buk.cl/trabaja-con-nosotros#Procesos_de_Sel";
 
+export default function HomePage({ onNavigate }: HomePageProps) {
   return (
-    <>
     <section
       className="relative min-h-[calc(100vh-64px)] flex items-center px-4 sm:px-6 py-10 sm:py-16 overflow-hidden"
       style={{
@@ -90,12 +86,14 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             Únete a un equipo que combina tecnología, cultura y ejecución real
           </p>
 
-          <button
-            onClick={() => setVacantesOpen(true)}
-            className="font-heading font-semibold text-sm px-6 py-2.5 rounded-r6 bg-brand text-neutral-900 hover:bg-brand-hover active:bg-brand-active transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/50"
+          <a
+            href={BUK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block font-heading font-semibold text-sm px-6 py-2.5 rounded-r6 bg-brand text-neutral-900 hover:bg-brand-hover active:bg-brand-active transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/50"
           >
             Ver vacantes
-          </button>
+          </a>
 
           {/* Navigation cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-2xl mx-auto mt-8 sm:mt-14">
@@ -122,8 +120,5 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </div>
     </section>
-
-    <VacantesModal isOpen={vacantesOpen} onClose={() => setVacantesOpen(false)} />
-    </>
   );
 }

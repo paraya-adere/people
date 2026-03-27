@@ -38,11 +38,11 @@ export default function Header({ currentPage, onNavigate, onUneteClick }: Header
           aria-label="Adereso – Ir a adereso.ai"
         >
           <Image
-            src="/assets/logo-adereso.png"
+            src="/logoadereso.webp"
             alt="Adereso"
             width={120}
             height={40}
-            className="h-8 sm:h-10 w-auto object-contain"
+            className="h-6 sm:h-8 w-auto object-contain"
             priority
           />
         </a>
@@ -63,16 +63,14 @@ export default function Header({ currentPage, onNavigate, onUneteClick }: Header
             </button>
           ))}
 
-          <button
-            onClick={() => { onUneteClick ? onUneteClick() : handleNavigate("unete"); setMenuOpen(false); }}
-            className={`font-heading font-semibold text-sm px-5 py-2 rounded-r6 transition-colors duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 ${
-              currentPage === "unete"
-                ? "bg-brand-hover text-neutral-900"
-                : "bg-brand text-neutral-900 hover:bg-brand-hover active:bg-brand-active"
-            }`}
+          <a
+            href="https://adereso.buk.cl/trabaja-con-nosotros#Procesos_de_Sel"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-heading font-semibold text-sm px-5 py-2 rounded-r6 transition-colors duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 bg-brand text-neutral-900 hover:bg-brand-hover active:bg-brand-active"
           >
             Únete
-          </button>
+          </a>
         </nav>
 
         {/* Mobile hamburger */}
@@ -109,16 +107,14 @@ export default function Header({ currentPage, onNavigate, onUneteClick }: Header
             </button>
           ))}
 
-          <button
-            onClick={() => { onUneteClick ? onUneteClick() : handleNavigate("unete"); setMenuOpen(false); }}
-            className={`font-heading font-semibold text-sm px-5 py-2.5 mt-2 rounded-r6 transition-colors duration-200 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 ${
-              currentPage === "unete"
-                ? "bg-brand-hover text-neutral-900"
-                : "bg-brand text-neutral-900 hover:bg-brand-hover active:bg-brand-active"
-            }`}
+          <a
+            href="https://adereso.buk.cl/trabaja-con-nosotros#Procesos_de_Sel"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-heading font-semibold text-sm px-5 py-2.5 mt-2 rounded-r6 transition-colors duration-200 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 bg-brand text-neutral-900 hover:bg-brand-hover active:bg-brand-active"
           >
             Únete
-          </button>
+          </a>
         </nav>
       )}
     </header>
